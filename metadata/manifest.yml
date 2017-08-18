@@ -37,4 +37,23 @@ Subscribes:
 Scaling:
   Min: 1
   Max: -1
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8081
+  Public-Port-Name: PROXY_PORT
+  Protocols:
+  - http
+  - ws
+  Options:
+    primary: true
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: true
+  - Frontend: /health
+    Backend: ''
+    Options:
+      health: true
 Source-Url: https://github.com/rforrizwan55/perl-openshift-emmbed/archive/master.zip
